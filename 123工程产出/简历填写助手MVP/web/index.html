@@ -1,0 +1,111 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>简历填写助手</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <h1>简历填写助手</h1>
+        <p>本地存储简历内容，配合浏览器扩展完成招聘网站半自动填写与检查。</p>
+      </div>
+      <div class="topbar-actions">
+        <button id="clearAllArchivesBtn" class="danger-button top-danger" type="button">一键清除所有存档</button>
+        <div class="status" id="saveStatus">未保存</div>
+      </div>
+    </header>
+
+    <section class="panel compact-panel">
+      <div class="panel-title">
+        <div>
+          <h2>读入简历</h2>
+          <p>支持 txt / docx / pdf。导入后会提取信息并合并到当前版本。</p>
+        </div>
+        <label class="select-wrap">
+          <span>当前版本</span>
+          <select id="versionSelect"></select>
+        </label>
+      </div>
+      <div class="import-row">
+        <div class="file-select-block">
+          <label class="file-picker">
+            <input id="resumeFile" type="file" accept=".txt,.docx,.pdf">
+            <span>选择文件</span>
+          </label>
+          <div id="selectedFileHint" class="file-selected-hint">未选择文件</div>
+        </div>
+        <button id="importBtn" class="primary">读入简历</button>
+        <button id="newVersionBtn">新建版本</button>
+      </div>
+      <div id="importResult" class="hint"></div>
+    </section>
+
+    <section class="panel editor-panel">
+      <div class="panel-title">
+        <div>
+          <h2>内容编辑</h2>
+          <p>按论文式章节整理，展开后编辑，收起后只看标题。修改会自动保存到本地。</p>
+        </div>
+        <div class="edit-actions">
+          <button id="manualSaveBtn" class="save-button" type="button">手动保存 Ctrl+S</button>
+        </div>
+      </div>
+      <div class="editor-stack" id="profileEditor"></div>
+    </section>
+
+    <section class="panel split">
+      <div>
+        <h2>版本分类存储</h2>
+        <p>建议保留通用版、游戏QA版、测试岗版。导入新简历时自动合并新增内容。</p>
+        <div class="version-list" id="versionList"></div>
+        <div class="version-actions">
+          <button id="deleteVersionBtn" class="danger-button" type="button">删除当前版本</button>
+          <p class="field-note">删除后会同步移除该版本本地存储的信息，不影响其他版本。</p>
+        </div>
+      </div>
+      <div>
+        <h2>个人简历网页生成</h2>
+        <p>生成本地静态网页，可放照片、视频和项目详细说明。</p>
+        <div class="media-row">
+          <label class="file-mini">照片<input id="photoFile" type="file" accept="image/*"></label>
+          <label class="file-mini">视频<input id="videoFile" type="file" accept="video/*"></label>
+        </div>
+        <button id="generateSiteBtn" class="primary">生成个人简历网页</button>
+        <a id="siteLink" class="site-link" target="_blank" rel="noreferrer"></a>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>浏览器扩展使用</h2>
+      <div class="extension-control">
+        <button id="floatingToggleBtn" class="primary" type="button">开启网页悬浮窗</button>
+        <span id="floatingToggleState">当前关闭：招聘网页不会显示悬浮窗</span>
+      </div>
+      <ol class="steps">
+        <li>打开 Chrome / Edge 的扩展管理页，启用开发者模式。</li>
+        <li>选择“加载已解压的扩展程序”，选择本工程的 <code>extension</code> 文件夹。</li>
+        <li>加载扩展后，先在这里手动开启悬浮窗；开启后当前页面、已刷新网页和新打开网页都会自动显示可拖动悬浮窗。需要关闭时，再回到这里点击关闭。</li>
+      </ol>
+    </section>
+  </main>
+
+
+
+  <script src="./app.js?v=20260818-archive-tools"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
