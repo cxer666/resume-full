@@ -1,0 +1,20 @@
+# Personal data and local runtime files
+data/
+uploads/
+generated_site/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
