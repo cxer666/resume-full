@@ -13,7 +13,17 @@
 - 支持生成个人简历网页
 - 所有简历数据默认保存在本地，不上传服务器
 
-## 下载
+## 创建桌面快捷方式
+
+Windows 用户可以在项目目录运行：
 
 ```powershell
+
+powershell -ExecutionPolicy Bypass -File ".\创建桌面快捷方式.ps1"
+
+## 下载
+code中选则download zip或者
+
+```powershell
+
 git clone https://github.com/cxer666/你的仓库名.git
